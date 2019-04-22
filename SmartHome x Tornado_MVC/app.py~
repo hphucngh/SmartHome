@@ -1,0 +1,20 @@
+import tornado.ioloop
+from model import *
+import time
+import tornado.web
+import tornado.httpserver
+import tornado.process
+import tornado.template
+from controller import video 
+import gen
+import os
+import tornado.gen
+
+global cam 
+def main():
+	model = router()
+	tornado.ioloop.IOLoop.instance().start()
+if __name__ == '__main__':
+	cam = video.UsbCamera()
+	main()
+
