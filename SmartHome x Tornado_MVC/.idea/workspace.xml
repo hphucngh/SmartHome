@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a634970-9e83-4ea0-b801-fad471537c90" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AutoClothesline.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/AutoClothesline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AutoFanLivingRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/AutoFanLivingRoom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AutoHumidityLand.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/AutoHumidityLand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AutoLightKitchenRoom.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/AutoLightKitchenRoom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AutoRainDetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/AutoRainDetect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Automatic.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Automatic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/BaseHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/BaseHandler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Climate.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Climate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Lights.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Lights.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/LightsOnOff.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/LightsOnOff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/OnOffDevice.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/OnOffDevice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ProfileUpdatePersonal.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/ProfileUpdatePersonal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Reload.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Reload.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ReloadChart.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/ReloadChart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/StreamCamera.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/StreamCamera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/TemperatureHumidity.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/TemperatureHumidity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/VersionHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/VersionHandler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,10 +12,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/AutoClothesline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="320">
               <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -62,10 +41,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/AutoFanLivingRoom.py">
+        <entry file="file://$PROJECT_DIR$/model/TemperatureHumidity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="304">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -74,10 +53,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/AutoHumidityLand.py">
+        <entry file="file://$PROJECT_DIR$/model/VersionHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="32">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/ProfileUpdatePersonal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -86,22 +77,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/AutoLightKitchenRoom.py">
+        <entry file="file://$PROJECT_DIR$/model/Reload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1392">
-              <caret line="87" column="105" lean-forward="true" selection-start-line="87" selection-start-column="105" selection-end-line="87" selection-end-column="105" />
+            <state relative-caret-position="128">
+              <caret line="8" column="29" selection-start-line="5" selection-end-line="8" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/BaseHandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -130,13 +112,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/Climate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="464">
+              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,7 +169,6 @@
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/model/Login.py" />
         <option value="$PROJECT_DIR$/controller/__init__.py" />
-        <option value="$PROJECT_DIR$/model/Climate.py" />
         <option value="$PROJECT_DIR$/model/LightsOnOff.py" />
         <option value="$PROJECT_DIR$/model/OnOffDevice.py" />
         <option value="$PROJECT_DIR$/model/Profile.py" />
@@ -206,6 +187,7 @@
         <option value="$PROJECT_DIR$/model/Automatic.py" />
         <option value="$PROJECT_DIR$/model/Lights.py" />
         <option value="$PROJECT_DIR$/model/AutoClothesline.py" />
+        <option value="$PROJECT_DIR$/model/Climate.py" />
       </list>
     </option>
   </component>
@@ -252,6 +234,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RunDashboard">
@@ -279,16 +262,15 @@
       <workItem from="1555835123882" duration="3209000" />
       <workItem from="1555919400681" duration="2007000" />
       <workItem from="1556265257246" duration="8000" />
-      <workItem from="1556331601879" duration="8014000" />
+      <workItem from="1556331601879" duration="9821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13238000" />
+    <option name="totallyTimeSpent" value="15045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1719457" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -400,13 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/ProfileUpdatePersonal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/ReloadChart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -424,38 +399,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Reload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" selection-start-line="5" selection-end-line="8" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/video.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/VersionHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TemperatureHumidity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/AutoRainDetect.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -514,16 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Climate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Profile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -554,9 +489,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/AutoClothesline.py">
+    <entry file="file://$PROJECT_DIR$/model/VersionHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Reload.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
+          <caret line="8" column="29" selection-start-line="5" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ProfileUpdatePersonal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/AutoClothesline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
           <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -577,6 +542,26 @@
               </data>
             </csv-format>
           </format>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TemperatureHumidity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Climate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

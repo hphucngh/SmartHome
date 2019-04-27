@@ -7,14 +7,11 @@ import BaseHandler
 
 class Profile(BaseHandler.BaseHandler):
     @tornado.web.authenticated
-
     def get(self):
         username = Login.username
         data = dumps(Env.database["homedb"].find({"username": username}))
         data = json.loads(data)
         self.render("profile.html", data=data)
-        
-
     def post(self):
         username = self.get_argument("user-name", "")
         password = self.get_argument("user-password", "")
@@ -25,3 +22,4 @@ class Profile(BaseHandler.BaseHandler):
             self.redirect("/home")
         else:
             self.render("login.html")
+

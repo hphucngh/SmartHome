@@ -4,22 +4,29 @@ from bson.json_util import dumps
 import json
 import BaseHandler
 
-
 class Home(BaseHandler.BaseHandler):
     @tornado.web.authenticated
     def get(self):
-        name = tornado.escape.xhtml_escape(self.current_user)
+        name = tornado.escape.xhtml_escape(
+            self.current_user
+        )
         result = Env.database.statusdb.aggregate(
             [
-                {"$group": {"_id": "$name", "status": {"$last": "$status"}}}
+                {
+                    "$group": {
+                        "_id": "$name",
+                        "status": {
+                            "$last": "$status"
+                        },
+                    }
+                }
             ]
         )
-        finds = (result.get("result"))
+        finds = result.get("result")
         new_dict = {}
-
         for item in finds:
-            name = item['_id']
-            status = item['status']
+            name = item["_id"]
+            status = item["status"]
             new_dict[name] = status
 
         #        lightLivingRoom = json.loads(dumps(Env.database["statusdb"].find({"name":"light-living-room"},{"name":1, "status":1, "_id":0}).sort([("_id", -1)]).limit(1)))[0]
@@ -48,3 +55,4 @@ class Home(BaseHandler.BaseHandler):
         # data = {"light-living-room":"off", "light-kitchen-room":"off", "light-bed-room":"off", "light-front-doors":"off", "light-back-doors":"off", "light-garage":"off"}
         data = json.dumps(new_dict)
         self.render("home.html", data=data)
+
