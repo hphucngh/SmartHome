@@ -3,8 +3,11 @@ from config import Env
 from bson.json_util import dumps
 import json
 import Login
+import BaseHandler
 
-class Profile(tornado.web.RequestHandler):
+class Profile(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
+
     def get(self):
         username = Login.username
         data = dumps(Env.database["homedb"].find({"username": username}))

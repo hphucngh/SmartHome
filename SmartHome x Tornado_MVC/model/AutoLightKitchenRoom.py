@@ -7,24 +7,26 @@ import json
 import RPi.GPIO as GPIO
 import threading
 import LightsOnOff
+import BaseHandler
 
-class AutoLightKitchenRoom(tornado.web.RequestHandler):
+class AutoLightKitchenRoom(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
 
 	def post(self):
-		global stop_thread		
-		
-		pinMotionSensor = 23 
-		pinLightSensor = 24 
+		global stop_thread
+
+		pinMotionSensor = 23
+		pinLightSensor = 24
 		pinLightKitchenRoom = 17
-		
+
 		GPIO.setmode(GPIO.BCM)
-        
+
 		GPIO.setup(pinMotionSensor, GPIO.IN)
 		GPIO.setup(pinLightSensor, GPIO.IN)
 		GPIO.setup(pinLightKitchenRoom, GPIO.OUT)
-	
-		key = self.get_argument("key") 
-		status = self.get_argument("value")	
+
+		key = self.get_argument("key")
+		status = self.get_argument("value")
 
 		def autoLightKitchenRoom():
 			while (1):
@@ -38,7 +40,7 @@ class AutoLightKitchenRoom(tornado.web.RequestHandler):
 						GPIO.output(pinLightKitchenRoom, GPIO.LOW)
 						time.sleep(1)
 				elif (LightSensor == 0):
-					GPIO.output(pinLightKitchenRoom, GPIO.LOW)		
+					GPIO.output(pinLightKitchenRoom, GPIO.LOW)
 				if stop_thread:
 					print "exit"
 					break
@@ -57,7 +59,7 @@ class AutoLightKitchenRoom(tornado.web.RequestHandler):
 					"endtime": None,
 					"iddevice" : "autoLightKitchenRoom"
 				}
-				Env.database["statusdb"].insert(new_status)	
+				Env.database["statusdb"].insert(new_status)
 
 				keyLight = "light-kitchen-room"
                                 iddevice = "lightKitchenRoom"
@@ -71,14 +73,14 @@ class AutoLightKitchenRoom(tornado.web.RequestHandler):
 					"endtime": None,
 					"iddevice" : iddevice
 				}
-				Env.database["statusdb"].insert(new_status)	
+				Env.database["statusdb"].insert(new_status)
 
 			if status == "off":
 				stop_thread = True
 				GPIO.output(pinLightKitchenRoom, GPIO.LOW)
 				endtime = datetime.datetime.utcnow()
 				finds = json.loads(dumps(Env.database["statusdb"].find({"name":key},{"status":1, "_id":0}).sort([("_id", -1)]).limit(1)))[0]
-				
+
 				f = finds["status"]
 				Env.database["statusdb"].update({"name":key, "status":f},{"$set":{"endtime":endtime,"status":status}})
 
@@ -88,23 +90,22 @@ class AutoLightKitchenRoom(tornado.web.RequestHandler):
 				Env.database["statusdb"].update({"name":keyLight, "status":f},{"$set":{"endtime":endtime,"status":status}})
 
 
-				
 
-		
-				
-				
-			
-				
-				
-				
-				
-			
-				
-				
-				
-				
-				
-				
-				
-				
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,10 @@
 import tornado.web
 from config import Env
 import time
+import BaseHandler
 
-class ProfileUpdatePersonal(tornado.web.RequestHandler):
+class ProfileUpdatePersonal(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
     def post(self):
         
         firstname = self.get_argument("firstname")

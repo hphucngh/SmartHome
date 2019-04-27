@@ -5,8 +5,11 @@ import datetime
 from bson.json_util import dumps
 import json
 import RPi.GPIO as GPIO
+import BaseHandler
 
-class LightsOnOff(tornado.web.RequestHandler):
+class LightsOnOff(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
+
     def post(self):
 
         pinLightLivingRoom = 4 

@@ -6,9 +6,12 @@ from bson.json_util import dumps
 import json
 import RPi.GPIO as GPIO
 import Adafruit_DHT
+import BaseHandler
+
+class TemperatureHumidity(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
 
 # Adafruit_DHT ho tro nhieu loai cam bien DHT, o day dung DHT11 nen chon cam bien  DHT11
-class TemperatureHumidity(tornado.web.RequestHandler):
 	def get(self):
 		chon_cam_bien = Adafruit_DHT.DHT11
 

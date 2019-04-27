@@ -9,9 +9,10 @@ import Adafruit_DHT
 import threading
 import os
 from tornado import gen
+import BaseHandler
 
-
-class OnOffDevice(tornado.web.RequestHandler):
+class OnOffDevice(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
 
 	def post(self):
 		pinTemperatureHumidity = 26 

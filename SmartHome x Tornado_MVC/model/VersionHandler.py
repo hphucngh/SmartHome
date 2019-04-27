@@ -1,6 +1,7 @@
 from datetime import date
 import tornado.web
 
+
 class VersionHandler(tornado.web.RequestHandler):
     def get(self):
         response = { 'version': '3.5.1',

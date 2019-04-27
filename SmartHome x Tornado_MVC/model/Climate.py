@@ -2,8 +2,11 @@ import tornado.web
 from config import Env
 from bson.json_util import dumps
 import json
+import BaseHandler
 
-class Climate(tornado.web.RequestHandler):
+class Climate(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
+
 	def get(self):
 
 		fanLivingRoom = json.loads(dumps(Env.database["statusdb"].find({"name":"fan-living-room"},{"name":1, "status":1, "_id":0}).sort([("_id", -1)]).limit(1)))[0]

@@ -3,8 +3,10 @@ from config import Env
 from bson.json_util import dumps
 import json
 from datetime import datetime
+import BaseHandler
 
-class ReloadChart(tornado.web.RequestHandler):
+class ReloadChart(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
 	def get(self):	
 		chartBedRoom = json.loads(dumps(Env.database["statusdb"].find({"name":"temperature-humidity-bedroom"},{"temperature":1, "humidity":1, "time":1, "_id":0}).sort([("_id", -1)]).limit(10)))
 		

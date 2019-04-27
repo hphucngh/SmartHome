@@ -35,7 +35,7 @@ class router:
 
             template_path=os.path.join(os.path.dirname(__file__), "../view/templates"),
             static_path=os.path.join(os.path.dirname(__file__), "../view/templates/assets"),
-            cookie_secret="x772x",
+            cookie_secret="ptfSecurity",
             login_url="/login"
         )
         self.router.listen(Env.PORT)

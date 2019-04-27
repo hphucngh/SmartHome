@@ -10,9 +10,13 @@ import gen
 import os
 import tornado.gen
 cam = None
+import BaseHandler
+
+class StreamCamera(BaseHandler.BaseHandler):
 
 cam = video.UsbCamera()
-class StreamCamera(tornado.web.RequestHandler):
+class StreamCamera(BaseHandler.BaseHandler):
+    @tornado.web.authenticated
     @tornado.web.asynchronous
     @tornado.gen.coroutine
     def streamCamera(self):
