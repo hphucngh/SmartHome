@@ -1,8 +1,7 @@
-import tornado.web
-from config import Env
-from bson.json_util import dumps
 import json
 import BaseHandler
+from config import Env
+
 
 class Lights(BaseHandler.BaseHandler):
     @tornado.web.authenticated

@@ -1,16 +1,15 @@
-import tornado.web
-from config import Env
 import time
 import datetime
-from bson.json_util import dumps
 import json
 import RPi.GPIO as GPIO
 import BaseHandler
+from config import Env
+from bson.json_util import dumps
+
 
 class LightsOnOff(BaseHandler.BaseHandler):
     @tornado.web.authenticated
     def post(self):
-
         pinLightLivingRoom = 4
         pinLightKitchenRoom = 17
         pinLightBedRoom = 27
@@ -46,6 +45,7 @@ class LightsOnOff(BaseHandler.BaseHandler):
 
         key = self.get_argument("key")
         status = self.get_argument("value")
+
         def writeOnLight(key, status, starttime, iddevice, data):
             new_status = {"name": key, "status": status, "data": data, "starttime": starttime, "endtime": None, "iddevice": iddevice}
             Env.database["statusdb"].insert(new_status)

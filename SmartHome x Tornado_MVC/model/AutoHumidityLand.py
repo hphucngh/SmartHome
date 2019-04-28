@@ -1,55 +1,40 @@
-import tornado.web
-from config import Env
-import time
 import datetime
-from bson.json_util import dumps
 import json
 import RPi.GPIO as GPIO
 import threading
 import BaseHandler
+from bson.json_util import dumps
+from config import Env
+
 
 class AutoHumidityLand(BaseHandler.BaseHandler):
     @tornado.web.authenticated
     def post(self):
         global stop_thread
-
         pinSoilSensor = 25
         pinWater = 9
-
         GPIO.setmode(GPIO.BCM)
-
         GPIO.setup(pinSoilSensor, GPIO.IN)
         GPIO.setup(pinWater, GPIO.OUT)
-
         key = self.get_argument("key")
         status = self.get_argument("value")
+
         def autoWaterTree():
             while 1:
-                HumidityLand = GPIO.input(
-                    pinSoilSensor
-                )
+                HumidityLand = GPIO.input(pinSoilSensor)
                 if HumidityLand == 1:
-                    GPIO.output(
-                        pinWater, GPIO.LOW
-                    )
+                    GPIO.output(pinWater, GPIO.LOW)
                 elif HumidityLand == 0:
-                    GPIO.output(
-                        pinWater, GPIO.HIGH
-                    )
+                    GPIO.output(pinWater, GPIO.HIGH)
                 if stop_thread:
-                    GPIO.output(
-                        pinWater, GPIO.HIGH
-                    )
+                    GPIO.output(pinWater, GPIO.HIGH)
                     break
+
         if key == "auto-humidity-land":
             if status == "on":
                 stop_thread = False
-                starttime = (
-                    datetime.datetime.utcnow()
-                )
-                threadAutoWater = threading.Thread(
-                    target=autoWaterTree
-                )
+                starttime = datetime.datetime.utcnow()
+                threadAutoWater = threading.Thread(target=autoWaterTree)
                 threadAutoWater.start()
                 new_status = {
                     "name": key,
@@ -81,9 +66,7 @@ class AutoHumidityLand(BaseHandler.BaseHandler):
             if status == "off":
                 stop_thread = True
                 GPIO.output(pinWater, GPIO.HIGH)
-                endtime = (
-                    datetime.datetime.utcnow()
-                )
+                endtime = datetime.datetime.utcnow()
                 finds = json.loads(
                     dumps(
                         Env.database["statusdb"]

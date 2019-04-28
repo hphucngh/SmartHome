@@ -1,12 +1,11 @@
-import tornado.web
-from config import Env
-import time
 import datetime
-from bson.json_util import dumps
 import json
 import RPi.GPIO as GPIO
 import threading
 import BaseHandler
+from config import Env
+from bson.json_util import dumps
+
 
 class AutoClothesline(BaseHandler.BaseHandler):
     @tornado.web.authenticated
@@ -19,29 +18,22 @@ class AutoClothesline(BaseHandler.BaseHandler):
         GPIO.setup(pinClothesline, GPIO.OUT)
         key = self.get_argument("key")
         status = self.get_argument("value")
+
         def autoClothesline():
             while 1:
                 Rain = GPIO.input(pinRainSensor)
                 if Rain == 1:
-                    GPIO.output(
-                        pinClothesline, GPIO.HIGH
-                    )
+                    GPIO.output(pinClothesline, GPIO.HIGH)
                 elif Rain == 0:
-                    GPIO.output(
-                        pinClothesline, GPIO.LOW
-                    )
+                    GPIO.output(pinClothesline, GPIO.LOW)
                 if stop_thread:
-                    print "exit"
                     break
+
         if key == "auto-clothesline":
             if status == "on":
                 stop_thread = False
-                starttime = (
-                    datetime.datetime.utcnow()
-                )
-                threadAutoClothesline = threading.Thread(
-                    target=autoClothesline
-                )
+                starttime = datetime.datetime.utcnow()
+                threadAutoClothesline = threading.Thread(target=autoClothesline)
                 threadAutoClothesline.start()
                 new_status = {
                     "name": key,
@@ -54,11 +46,10 @@ class AutoClothesline(BaseHandler.BaseHandler):
                 Env.database["statusdb"].insert(
                     new_status
                 )
+
             if status == "off":
                 stop_thread = True
-                endtime = (
-                    datetime.datetime.utcnow()
-                )
+                endtime = datetime.datetime.utcnow()
                 finds = json.loads(
                     dumps(
                         Env.database["statusdb"]
@@ -73,6 +64,7 @@ class AutoClothesline(BaseHandler.BaseHandler):
                         .limit(1)
                     )
                 )[0]
+
                 f = finds["status"]
                 Env.database["statusdb"].update(
                     {"name": key, "status": f},
@@ -83,4 +75,3 @@ class AutoClothesline(BaseHandler.BaseHandler):
                         }
                     },
                 )
-

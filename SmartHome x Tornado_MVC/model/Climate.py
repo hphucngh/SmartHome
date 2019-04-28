@@ -1,8 +1,8 @@
 import json
 import BaseHandler
-import tornado.web
 from bson.json_util import dumps
 from config import Env
+
 
 class Climate(BaseHandler.BaseHandler):
     @tornado.web.authenticated
@@ -22,6 +22,7 @@ class Climate(BaseHandler.BaseHandler):
                 .limit(1)
             )
         )[0]
+
         fanBedRoom = json.loads(
             dumps(
                 Env.database["statusdb"]
@@ -37,6 +38,7 @@ class Climate(BaseHandler.BaseHandler):
                 .limit(1)
             )
         )[0]
+
         thBedRoom = json.loads(
             dumps(
                 Env.database["statusdb"]
@@ -50,18 +52,13 @@ class Climate(BaseHandler.BaseHandler):
                 .limit(1)
             )
         )[0]
+
         data = {
-            fanLivingRoom["name"]: fanLivingRoom[
-                "status"
-            ],
-            fanBedRoom["name"]: fanBedRoom[
-                "status"
-            ],
+            fanLivingRoom["name"]: fanLivingRoom["status"],
+            fanBedRoom["name"]: fanBedRoom["status"],
             "temperature-humidity-bedroom": "off",
             "temperature-humidity": {
-                "temperature": thBedRoom[
-                    "temperature"
-                ],
+                "temperature": thBedRoom["temperature"],
                 "humidity": thBedRoom["humidity"],
             },
         }
