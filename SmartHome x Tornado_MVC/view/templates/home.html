@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <!-- Arming Modal -->
+{#    <!-- Arming Modal -->
     <div class="modal modal-warning centered fade" id="armModal" tabindex="-1" role="dialog" aria-label="Arming" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -33,7 +33,7 @@
         <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
-    </div>
+    </div>#}
 
     <!-- Wrapper START -->
     <div id="wrapper" class="hidden">
@@ -51,7 +51,7 @@
 								<rect x="8" y="15" width="21" height="3" class="menu-lines"></rect>
 								<rect x="8" y="22" width="21" height="3" class="menu-lines"></rect>
 							</svg>
-							<input id="minifier" type="checkbox"> 
+							<input id="minifier" type="checkbox">
 						</label>
                         <div class="info-holder info-rb">
                             <div data-toggle="popover-all" data-content="Checkbox element using localStorage to remember the last status." data-original-title="Side menu narrowing" data-placement="right"></div>
@@ -97,11 +97,11 @@
 			                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#bulb-eco")}}"/></svg> Lights
 			              </a>
 			            </li>
-			            <li class="nav-item">
+{#			            <li class="nav-item">
 			              <a class="nav-link" href="/cameras">
 			                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#camera")}}"/></svg> Cameras
 			              </a>
-			            </li>
+			            </li>#}
 			            <li class="nav-item">
 			              <a class="nav-link" href="/automatic">
 			                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#appliances")}}"/></svg> Automatic
@@ -142,7 +142,7 @@
                                 </div>
                                 <!-- Security system END -->
                             </div>
-                            
+
                              <div class="col-sm-12 col-md-6">
                                 <!-- Security system START -->
                                 <div class="card" data-unit="garage-doors">
@@ -159,8 +159,6 @@
                                 </div>
                                 <!-- Security system END -->
                             </div>
-
-
                             <div class="col-sm-12 col-md-6">
                                 <!-- Security system START -->
                                 <div class="card" data-unit="water-tree">
@@ -287,7 +285,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!-- Appliances  Start -->
                             <div class="col-sm-12 col-md-6 col-xl-4">
                                 <div class="card">
@@ -298,13 +296,13 @@
                             </div>
                             <!-- Appliances  END -->
                         </div>
-                        
+
                         <div class="row">
-                            <div class="col-sm-12 col-md-12">    
+                            <div class="col-sm-12 col-md-12">
                                 <!-- Camera 1  START -->
                                 <div class="card active" data-unit="switch-camera-1">
                                     <div class="card-img-top card-stream">
-									    <img id="videofield" class="col-sm-12 col-md-12" src="/streamcamera" />	
+									    <img id="videofield" class="col-sm-12 col-md-12" src="/streamcamera" />
                                         <div class="card-preloader">
                                             <div class="center-preloader d-flex align-items-center">
                                                 <div class="spinners">
@@ -332,7 +330,7 @@
                                 </div>
                                 <!-- Camera 1  END -->
                             </div>
-                            
+
                         </div>
                         <br><br>
                     </div>
@@ -369,51 +367,48 @@
     </svg>
 
     <!-- jQuery -->
-    <script src="{{static_url("js/jquery-3.3.1.min.js")}}"></script>
+    <script src="{{ static_url("js/jquery-3.3.1.min.js") }}"></script>
 
     <!-- Bootstrap bundle -->
-    <script src="{{static_url("js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{ static_url("js/bootstrap.bundle.min.js") }}"></script>
 
     <!-- Cross browser support for SVG icon sprites -->
-    <script src="{{static_url("js/svg4everybody.min.js")}}"></script>
+    <script src="{{ static_url("js/svg4everybody.min.js") }}"></script>
 
     <!-- jQuery countdown timer plugin (Exit modal, Garage doors, Washing machine) -->
-    <script src="{{static_url("js/iot-timer.min.js")}}"></script>
+    <script src="{{ static_url("js/iot-timer.min.js") }}"></script>
 
     <!-- Basic theme functionality (arming, garage doors, switches ...) - using jQuery -->
-    <script src="{{static_url("js/iot-functions.min.js")}}"></script>
-    
+    <script src="{{ static_url("js/iot-functions.min.js") }}"></script>
+
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             if (localStorage) {
                 var checkboxValue = localStorage.getItem('minifier');
                 if (checkboxValue === 'true') {
                     $('#sidebar,#menu-minifier').addClass('mini');
                     $('#minifier').prop('checked', true);
-                }
-                else{
+                } else {
                     if ($('#minifier').is(':checked')) {
                         $('#sidebar,#menu-minifier').addClass('mini');
                         $('#minifier').prop('checked', true);
-                    }
-                    else{
+                    } else {
                         $('#sidebar,#menu-minifier').removeClass('mini');
                         $('#minifier').prop('checked', false);
                     }
                 }
-                
+
                 // Switch statuses
                 dataHome = '{% raw data %}';
                 localStorage.setItem('switchValues', dataHome);
                 var switchValues = JSON.parse(localStorage.getItem('switchValues'));
-                $.each(switchValues, function(key, value) {
+                $.each(switchValues, function (key, value) {
                     if ($('[data-unit="' + key + '"]').length) {
                         if (value === "on") {
                             $('[data-unit="' + key + '"]').addClass("active");
                             $("#" + key).prop('checked', true);
                             $("#" + key).closest("label").addClass("checked");
-                        }
-                        else {
+                        } else {
                             $('[data-unit="' + key + '"]').removeClass("active");
                             $("#" + key).prop('checked', false);
                             $("#" + key).closest("label").removeClass("checked");
@@ -421,48 +416,52 @@
                     }
                 });
             }
-            
-            $('#switch-camera-1',).on("click", function() {
-		    		if ($(this).is(':checked')){
-		        		$.ajax({
-		            	url:'/streamcamera',
-		            	type:'POST',
-		            	data:{	key:($(this).attr('id')), value: "on",},
-		            
-		            	success: function(response){	}
-		        		});
-		    		}else{
-		        		$.ajax({
-		            	url:'/streamcamera',
-		            	type:'POST',
-		            	data:{	key:($(this).attr('id')), value: "off",},
-		            
-		            	success: function(response){	}
-						});
-		    		}
-      		});
 
-            $('input').on("click", function() {
-		        if ($(this).is(':checked')){
-		            $.ajax({
-		                url:'/lightsonoff',
-		                type:'POST',
-		                data:{	key:($(this).attr('id')), value: "on",},
-		            
-		                success: function(response){	}
-		            });
-		        }else{
-		            $.ajax({
-		                url:'/lightsonoff',
-		                type:'POST',
-		                data:{	key:($(this).attr('id')), value: "off",},
-		            
-		                success: function(response){	}
-					});
-		        }
+            $('#switch-camera-1',).on("click", function () {
+                if ($(this).is(':checked')) {
+                    $.ajax({
+                        url: '/streamcamera',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "on",},
+
+                        success: function (response) {
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: '/streamcamera',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "off",},
+
+                        success: function (response) {
+                        }
+                    });
+                }
             });
 
-            $('#minifier').click(function() {
+            $('input').on("click", function () {
+                if ($(this).is(':checked')) {
+                    $.ajax({
+                        url: '/lightsonoff',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "on",},
+
+                        success: function (response) {
+                        }
+                    });
+                } else {
+                    $.ajax({
+                        url: '/lightsonoff',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "off",},
+
+                        success: function (response) {
+                        }
+                    });
+                }
+            });
+
+            $('#minifier').click(function () {
                 $('#sidebar,#menu-minifier').toggleClass('mini');
                 if (localStorage) {
                     checkboxValue = this.checked;
@@ -471,15 +470,14 @@
             });
 
 
-
             // Side menu toogler for medium and small screens
-            $('[data-toggle="offcanvas"]').click(function() {
+            $('[data-toggle="offcanvas"]').click(function () {
                 $('.row-offcanvas').toggleClass('active');
             });
 
             // Switch (checkbox element) toogler
-            $('.switch input[type="checkbox"]').on("change", function(t) {
-                
+            $('.switch input[type="checkbox"]').on("change", function (t) {
+
                 // Check the time between changes to prevert Android native browser execute twice
                 // If you dont need support for Android native browser - just call "switchSingle" function
                 if (this.last) {
@@ -506,27 +504,27 @@
 
                 }
             });
-            
-            $('.lights-control').click(function() {
+
+            $('.lights-control').click(function () {
 
                 var target = $(this).closest('.lights-controls').data('controls');
                 var action = $(this).data('action');
 
                 iot.switchGroup(target, action);
-                
+
                 $.ajax({
-                    url:'/lightsonoff',
-                    type:'POST',
-                    data:{
-                        key:($(this).attr('id')), value:"all",
+                    url: '/lightsonoff',
+                    type: 'POST',
+                    data: {
+                        key: ($(this).attr('id')), value: "all",
                     },
-                    success: function(response){
+                    success: function (response) {
 
                     }
                 });
-                
+
             });
-            
+
             // Reposition to center when a modal is shown
             $('.modal.centered').on('show.bs.modal', iot.centerModal);
 
@@ -534,14 +532,14 @@
             $('#armModal').on('hide.bs.modal', iot.clearCountdown);
 
             // Garage doors controls
-            $('.doors-control').click(function() {
+            $('.doors-control').click(function () {
                 var target = $(this).closest('.timer-controls').data('controls');
                 var action = $(this).data('action');
                 iot.garageDoors(target, action);
             });
 
             // Alerts "Close" callback - hide modal and alert indicator dot when user closes all alerts
-            $('#alertsModal .alert').on('close.bs.alert', function() {
+            $('#alertsModal .alert').on('close.bs.alert', function () {
                 var sum = $('#alerts-toggler').attr('data-alerts');
                 sum = sum - 1;
                 $('#alerts-toggler').attr('data-alerts', sum);
@@ -552,7 +550,7 @@
             });
 
             // Show/hide tips (popovers) - FAB button (right bottom on large screens)
-            $('#info-toggler').click(function() {
+            $('#info-toggler').click(function () {
                 if ($('body').hasClass('info-active')) {
                     $('[data-toggle="popover-all"]').popover('hide');
                     $('body').removeClass('info-active');
@@ -563,7 +561,7 @@
             });
 
             // Hide tips (popovers) by clicking outside
-            $('body').on('click', function(pop) {
+            $('body').on('click', function (pop) {
                 if (pop.target.id !== 'info-toggler' && $('body').hasClass('info-active')) {
                     $('[data-toggle="popover-all"]').popover('hide');
                     $('body').removeClass('info-active');
@@ -573,11 +571,11 @@
         });
 
         // Apply necessary changes, functionality when content is loaded
-        $(window).on('load', function() {
-            // This script is necessary for cross browsers icon sprite support (IE9+, ...) 
+        $(window).on('load', function () {
+            // This script is necessary for cross browsers icon sprite support (IE9+, ...)
             svg4everybody();
             // "Timeout" function is not neccessary - important is to hide the preloader overlay
-            setTimeout(function() {
+            setTimeout(function () {
                 // Hide preloader overlay when content is loaded
                 $('#iot-preloader,.card-preloader').fadeOut();
                 $("#wrapper").removeClass("hidden");
@@ -587,7 +585,7 @@
         });
 
         // Apply necessary changes if window resized
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             // Modal reposition when the window is resized
             $('.modal.centered:visible').each(iot.centerModal);
             // Check for Main contents scrollbar visibility and set right position for FAB button
