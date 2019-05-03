@@ -1,3 +1,4 @@
+import tornado.web
 import datetime
 import json
 import threading
@@ -71,7 +72,7 @@ class AutoFanLivingRoom(BaseHandler.BaseHandler):
                 endtime = datetime.datetime.utcnow() # Cap nhat thoi gian tat thiet bi
 
 				# Tim kiem xem co Document nao co {"name" : key} va loc theo truong "status" => sap xep theo _id va lay 1 document => [0] bo [] trong [{...}] thanh {...}
-				finds = json.loads(
+                finds = json.loads(
 					dumps(
 						Env.database["statusdb"]
 							.find(
@@ -89,8 +90,8 @@ class AutoFanLivingRoom(BaseHandler.BaseHandler):
 				)[0]
 
 				# Chua bat ngoai le cho truong hop status bang off
-				f = finds["status"]
-				Env.database["statusdb"].update(
+                f = finds["status"]
+                Env.database["statusdb"].update(
 					{
 						"name": key,
 						"status": f
@@ -104,8 +105,8 @@ class AutoFanLivingRoom(BaseHandler.BaseHandler):
 					}
 				)
 
-				keyFan = "fan-living-room"
-				finds = json.loads(
+                keyFan = "fan-living-room"
+                finds = json.loads(
 					dumps(
 						Env.database["statusdb"]
 							.find(
@@ -122,8 +123,8 @@ class AutoFanLivingRoom(BaseHandler.BaseHandler):
 					)
 				)[0]
 
-				f = finds["status"]
-				Env.database["statusdb"].update(
+                f = finds["status"]
+                Env.database["statusdb"].update(
 					{
 						"name": keyFan,
 						"status": f

@@ -1,3 +1,4 @@
+import tornado.web
 import json
 import BaseHandler
 from bson.json_util import dumps
@@ -57,10 +58,7 @@ class Climate(BaseHandler.BaseHandler):
             fanLivingRoom["name"]: fanLivingRoom["status"],
             fanBedRoom["name"]: fanBedRoom["status"],
             "temperature-humidity-bedroom": "off",
-            "temperature-humidity": {
-                "temperature": thBedRoom["temperature"],
-                "humidity": thBedRoom["humidity"],
-            },
+            "temperature-humidity": {"temperture": thBedRoom["temperture"],"humidity": thBedRoom["humidity"]},
         }
         data = json.dumps(data)
         self.render("climate.html", data=data)

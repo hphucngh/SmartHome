@@ -26,7 +26,7 @@
 				<div class="d-none d-lg-block">
 					<form>
 						<div id="menu-minifier">
-						<label>
+								<label>
 							<svg width="32" height="32" viewBox="0 0 32 32">
 								<rect x="2" y="8" width="4" height="3" class="menu-dots"></rect>
 								<rect x="2" y="15" width="4" height="3" class="menu-dots"></rect>

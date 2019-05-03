@@ -1,7 +1,7 @@
 import tornado.web
 from model import VersionHandler, Login, LightsOnOff, Home, Lights, Profile, ProfileUpdatePersonal, Climate, \
     OnOffDevice, TemperatureHumidity, Reload, ReloadChart, Automatic, AutoFanLivingRoom, AutoLightKitchenRoom, \
-    AutoClothesline, AutoHumidityLand, StreamCamera
+    AutoClothesline, AutoHumidityLand, StreamCamera, ChangePassword
 from config import Env
 import os.path
 import RPi.GPIO as GPIO
@@ -25,6 +25,7 @@ class router:
             (r"/autohumidityland", AutoHumidityLand),
             (r"/autoclothesline", AutoClothesline),
             (r"/profile/update/personal", ProfileUpdatePersonal),
+            (r"/profile/update/changepassword", ChangePassword),
             (r"/lightsonoff", LightsOnOff),
             (r"/onoffdevice", OnOffDevice),
             (r"/temperaturehumidity", TemperatureHumidity),

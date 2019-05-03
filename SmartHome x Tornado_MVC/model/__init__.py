@@ -23,6 +23,7 @@ from .StreamCamera import StreamCamera
 from .OnOffDevice import OnOffDevice
 from .BaseHandler import BaseHandler
 from .LightsOnOff import LightsOnOff
+from .ChangePassword import ChangePassword
 
 __all__ = {
 
@@ -33,6 +34,7 @@ __all__ = {
     ("Profile", "My404"),
     ("Climate", "My404"),
     ("ProfileUpdatePersonal", "Profile"),
+    ("ChangePassword", "Profile"),
     ("OnOffDevice", "My404"),
     ("TemperatureHumidity", "My404"),
     ("Reload", "My404"),
