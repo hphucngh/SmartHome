@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="smarthome" content="lvtn-mmt-2019">
-    <title>Smart Home with Raspberry Pi</title>
-    <link href="{{static_url("css/iot-theme-bundle.min.css ")}}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="smarthome" content="lvtn-mmt-2019">
+	<title>Xây Dựng Ngôi Nhà Thông Minh</title>
+	<link href="{{static_url("css/iot-theme-bundle.min.css")}}" rel="stylesheet">
 </head>
 <body>
     <div id="iot-preloader">
@@ -64,7 +63,6 @@
         </nav>
         <div class="wrapper-offcanvas">
             <div class="row-offcanvas row-offcanvas-left">
-                <!-- Side menu START -->
                 <div id="sidebar" class="sidebar-offcanvas">
                     <ul class="nav flex-column nav-sidebar">
                         <li class="nav-item">
@@ -78,18 +76,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/cameras">
-                                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#camera")}}"/></svg> Cameras
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="/automatic">
                                 <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#appliances")}}"/></svg> Automatic
                             </a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link active" href="/climate">
-                                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#thermometer")}}"/></svg> <span>Climate</span>
+                                <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#thermometer")}}"/></svg> Climate
                             </a>
                         </li>
                     </ul>
@@ -114,7 +107,6 @@
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="col-sm-12 col-md-6">
                                 <div class="card active" data-unit="fan-bed-room">
                                     <ul class="list-group borderless">
@@ -133,10 +125,8 @@
                         </div>
 
                         <hr class="my-2">
-                        <!-- Outdoor temperature graph START -->
                         <div class="row">
                             <div class="col-sm-12">
-
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">Outdoor temperature</h4>
@@ -172,7 +162,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <hr class="my-0">
                                     <div class="card-body">
                                         <div id="chart02" class="ct-chart"></div>
@@ -180,26 +169,16 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Outdoor temperature END -->
-
                     </div>
                     <div class="cover-offcanvas" data-toggle="offcanvas"></div>
                 </div>
-                <!-- Main content END -->
             </div>
         </div>
     </div>
 
-    <button id="info-toggler" type="button" class="btn btn-primary btn-fab btn-fixed-br d-none d-lg-inline-block">
-        <svg class="icon-sprite"><use xlink:href="{{static_url("images/icons-sprite.svg#info")}}"/></svg>
-    </button>
-
-    <!-- SVG assets - not visible -->
     <svg id="svg-tool" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
-            <style type="text/css">
-                .glow circle {fill:url(#radial-glow)}
-            </style>
+            <style type="text/css">.glow circle {fill:url(#radial-glow)}</style>
             <filter id="blur" x="-25%" y="-25%" width="150%" height="150%">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
             </filter>
@@ -229,7 +208,7 @@
     <script src="{{static_url("js/chartist.min.js")}}"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             if (localStorage) {
                 var checkboxValue = localStorage.getItem('minifier');
                 if (checkboxValue === 'true') {
@@ -248,8 +227,7 @@
                 dataClimate = '{% raw data %}';
                 localStorage.setItem('switchValues', dataClimate);
                 var switchValues = JSON.parse(localStorage.getItem('switchValues'));
-
-                $.each(switchValues, function(key, value) {
+                $.each(switchValues, function (key, value) {
                     if ($('[data-unit="' + key + '"]').length) {
                         if (value === "on") {
                             $('[data-unit="' + key + '"]').addClass("active");
@@ -262,37 +240,36 @@
                         }
                     }
                 });
-           }
+            }
 
-               $('input').on("click", function() {
-		    if ($(this).is(':checked')){
-		        $.ajax({
-		            url:'/onoffdevice',
-		            type:'POST',
-		            data:{	key:($(this).attr('id')), value: "on",},
-		            
-		            success: function(response){	}
-		        });
-						
-						
-						if (($(this).attr('id')) === "temperature-humidity-bedroom") {
-                            reloadPage = setInterval(function() {
+            $('input').on("click", function () {
+                if ($(this).is(':checked')) {
+                    $.ajax({
+                        url: '/onoffdevice',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "on",},
+                        success: function (response) {
+                        }
+                    });
+
+                    if (($(this).attr('id')) === "temperature-humidity-bedroom") {
+                        reloadPage = setInterval(function () {
                             $.ajax({
                                 type: 'GET',
                                 url: '/climate/reload',
-                                success: function(response) {
+                                success: function (response) {
                                     var dataTH = JSON.parse(response);
                                     document.getElementById("temperature").innerHTML = dataTH["temperature"];
                                     document.getElementById("humidity").innerHTML = dataTH["humidity"];
                                 }
                             })
-                            }, 2000);
+                        }, 2000);
 
-                            reloadChart = setInterval(function() {
+                        reloadChart = setInterval(function () {
                             $.ajax({
                                 type: 'GET',
                                 url: '/climate/reloadchart',
-                                success: function(response) {
+                                success: function (response) {
                                     var dataChart = JSON.parse(response);
                                     var data02 = dataChart["chart"];
                                     var options02 = {
@@ -323,7 +300,7 @@
                                         }]
                                     ];
                                     new Chartist.Line('#chart02', data02, options02, responsive_steps02)
-                                        .on('draw', function(data02) {
+                                        .on('draw', function (data02) {
                                             if (data02.type === 'bar' && data02.value.y > 0) {
                                                 data02.element.attr({
                                                     class: 'ct-bar abovezero'
@@ -332,29 +309,22 @@
                                         });
                                 }
                             })
-                            }, 2000);
+                        }, 2000);
+                    }
+                } else {
+                    $.ajax({
+                        url: '/onoffdevice',
+                        type: 'POST',
+                        data: {key: ($(this).attr('id')), value: "off",},
 
-                        }		        
-		        
-		        
-		    }else{
-		        $.ajax({
-		            url:'/onoffdevice',
-		            type:'POST',
-		            data:{	key:($(this).attr('id')), value: "off",},
-		            
-		            success: function(response){	}
-					});
-		    }
-      });
-                        
-                        
+                        success: function (response) {
+                        }
+                    });
+                }
+            });
 
-                    
-                // Range Slider values
-                var rangeValues = JSON.parse(localStorage.getItem('rangeValues')) || {};
-            
-
+            // Range Slider values
+            var rangeValues = JSON.parse(localStorage.getItem('rangeValues')) || {};
 
             // Contract/expand side menu on click. (only large screens)
             $('#minifier').click(function() {
@@ -396,8 +366,8 @@
             // Reposition to center when a modal is shown
             $('.modal.centered').on('show.bs.modal', iot.centerModal);
 
-            // Alerts "Close" callback - hide modal and alert indicator dot when user closes all alerts
-            $('#alertsModal .alert').on('close.bs.alert', function() {
+ {#           // Alerts "Close" callback - hide modal and alert indicator dot when user closes all alerts
+            $('#alertsModal .alert').on('close.bs.alert', function () {
                 var sum = $('#alerts-toggler').attr('data-alerts');
                 sum = sum - 1;
                 $('#alerts-toggler').attr('data-alerts', sum);
@@ -408,7 +378,7 @@
             });
 
             // Show/hide tips (popovers) - FAB button (right bottom on large screens)
-            $('#info-toggler').click(function() {
+            $('#info-toggler').click(function () {
 
                 if ($('body').hasClass('info-active')) {
                     $('[data-toggle="popover-all"]').popover('hide');
@@ -420,7 +390,7 @@
             });
 
             // Hide tips (popovers) by clicking outside
-            $('body').on('click', function(pop) {
+            $('body').on('click', function (pop) {
 
                 if (pop.target.id !== 'info-toggler' && $('body').hasClass('info-active')) {
                     $('[data-toggle="popover-all"]').popover('hide');
@@ -429,40 +399,40 @@
 
             });
 
-        });
+        });#}
 
-        // Apply necessary changes, functionality when content is loaded
-        $(window).on('load', function() {
-            // This script is necessary for cross browsers icon sprite support (IE9+, ...) 
-            svg4everybody();
-            // "Timeout" function is not neccessary - important is to hide the preloader overlay
-            setTimeout(function() {
-                // Hide preloader overlay when content is loaded
-                $('#iot-preloader,.card-preloader').fadeOut();
-                $("#wrapper").removeClass("hidden");
-                // Initialize range sliders
-                $('input[type="range"]').rangeslider({
-                    polyfill: false,
-                    onSlideEnd: function(position, value) {
-                        var rangeValues = JSON.parse(localStorage.getItem('rangeValues')) || {};
-                        // Update localStorage
-                        if (localStorage) {
-                            rangeValues[this.$element[0].id] = value;
-                            localStorage.setItem("rangeValues", JSON.stringify(rangeValues));
+            // Apply necessary changes, functionality when content is loaded
+            $(window).on('load', function () {
+                // This script is necessary for cross browsers icon sprite support (IE9+, ...)
+                svg4everybody();
+                // "Timeout" function is not neccessary - important is to hide the preloader overlay
+                setTimeout(function () {
+                    // Hide preloader overlay when content is loaded
+                    $('#iot-preloader,.card-preloader').fadeOut();
+                    $("#wrapper").removeClass("hidden");
+                    // Initialize range sliders
+                    $('input[type="range"]').rangeslider({
+                        polyfill: false,
+                        onSlideEnd: function (position, value) {
+                            var rangeValues = JSON.parse(localStorage.getItem('rangeValues')) || {};
+                            // Update localStorage
+                            if (localStorage) {
+                                rangeValues[this.$element[0].id] = value;
+                                localStorage.setItem("rangeValues", JSON.stringify(rangeValues));
+                            }
                         }
-                    }
-                });
+                    });
+                    // Check for Main contents scrollbar visibility and set right position for FAB button
+                    iot.positionFab();
+                }, 800);
+            });
+            // Apply necessary changes if window resized
+            $(window).on('resize', function () {
+                // Modal reposition when the window is resized
+                $('.modal.centered:visible').each(iot.centerModal);
                 // Check for Main contents scrollbar visibility and set right position for FAB button
                 iot.positionFab();
-            }, 800);
-        });
-        // Apply necessary changes if window resized
-        $(window).on('resize', function() {
-            // Modal reposition when the window is resized
-            $('.modal.centered:visible').each(iot.centerModal);
-            // Check for Main contents scrollbar visibility and set right position for FAB button
-            iot.positionFab();
-        });
+            });
     </script>
 </body>
 

@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9a634970-9e83-4ea0-b801-fad471537c90" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/automatic.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/automatic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/cameras.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/climate.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/climate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/templates/lights.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/lights.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/test.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,13 +18,62 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/view/templates/profile.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="-112">
+                    <caret line="5" column="41" lean-forward="true" selection-start-line="2" selection-end-line="9" selection-end-column="7" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/templates/login.html">
+        <entry file="file://$PROJECT_DIR$/model/AutoClothesline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            <state relative-caret-position="1616">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-data-editor">
+            <state>
+              <format>
+                <csv-format name="Tab-separated (TSV)" id="Tab-separated (TSV)_id">
+                  <data>
+                    <record-format prefix="" suffix="" nullText="" quotationPolicy="as needed" valueSeparator="&#9;" recordSeparator="&#10;">
+                      <quotation>
+                        <quotes left="&quot;" right="&quot;" leftEscaped="&quot;&quot;" rightEscaped="&quot;&quot;" />
+                        <quotes left="'" right="'" leftEscaped="''" rightEscaped="''" />
+                      </quotation>
+                    </record-format>
+                  </data>
+                </csv-format>
+              </format>
             </state>
           </provider>
         </entry>
@@ -27,17 +81,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="-1716">
+              <caret line="324" column="19" lean-forward="true" selection-start-line="324" selection-start-column="19" selection-end-line="324" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/templates/lights.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1308">
+              <caret line="551" column="4" selection-start-line="551" selection-start-column="4" selection-end-line="551" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" column="49" lean-forward="true" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/templates/climate.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4976">
+              <caret line="311" column="33" selection-start-line="311" selection-start-column="33" selection-end-line="311" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/templates/lights.html">
+        <entry file="file://$PROJECT_DIR$/view/templates/automatic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-880">
-              <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
+            <state relative-caret-position="350">
+              <caret line="438" column="12" selection-start-line="438" selection-start-column="12" selection-end-line="438" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -58,7 +142,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/view/templates/automatic.html" />
         <option value="$PROJECT_DIR$/config/__init__.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/controller/__init__.py" />
@@ -83,8 +166,11 @@
         <option value="$PROJECT_DIR$/model/ReloadChart.py" />
         <option value="$PROJECT_DIR$/model/StreamCamera.py" />
         <option value="$PROJECT_DIR$/view/templates/home.html" />
-        <option value="$PROJECT_DIR$/view/templates/login.html" />
+        <option value="$PROJECT_DIR$/view/templates/profile.html" />
         <option value="$PROJECT_DIR$/view/templates/lights.html" />
+        <option value="$PROJECT_DIR$/view/templates/login.html" />
+        <option value="$PROJECT_DIR$/view/templates/climate.html" />
+        <option value="$PROJECT_DIR$/view/templates/automatic.html" />
       </list>
     </option>
   </component>
@@ -100,7 +186,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,6 +218,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,16 +260,19 @@
       <workItem from="1556359960829" duration="461000" />
       <workItem from="1556418466828" duration="9955000" />
       <workItem from="1556788021034" duration="3154000" />
+      <workItem from="1556872181620" duration="1227000" />
+      <workItem from="1556939817339" duration="7451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28615000" />
+    <option name="totallyTimeSpent" value="37293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-7" width="1368" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14924243" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15378788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -203,7 +292,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19242424" />
@@ -234,13 +323,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/model/Adafruit_Python_DHT/Adafruit_DHT/platform_detect.py" />
-    <entry file="file://$PROJECT_DIR$/view/templates/automatic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="502" lean-forward="true" selection-start-line="502" selection-end-line="502" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Adafruit_Python_DHT/_gitignore" />
     <entry file="file://$PROJECT_DIR$/view/templates/assets/css/iot-theme-bundle.min.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -264,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="193" column="94" selection-start-line="193" selection-start-column="94" selection-end-line="193" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/AutoHumidityLand.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -287,16 +362,6 @@
           <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/AutoLightKitchenRoom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -484,11 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/AutoClothesline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1744">
-          <caret line="109" column="26" lean-forward="true" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1616">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
         </state>
       </provider>
       <provider editor-type-id="csv-data-editor">
@@ -508,29 +570,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/templates/test.html">
+    <entry file="file://$PROJECT_DIR$/model/AutoLightKitchenRoom.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+        <state relative-caret-position="80">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="-1716">
+          <caret line="324" column="19" lean-forward="true" selection-start-line="324" selection-start-column="19" selection-end-line="324" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/templates/lights.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-880">
-          <caret line="167" column="68" lean-forward="true" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
+        <state relative-caret-position="1308">
+          <caret line="551" column="4" selection-start-line="551" selection-start-column="4" selection-end-line="551" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="49" lean-forward="true" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/templates/climate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4976">
+          <caret line="311" column="33" selection-start-line="311" selection-start-column="33" selection-end-line="311" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="2" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/templates/automatic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="438" column="12" selection-start-line="438" selection-start-column="12" selection-end-line="438" selection-end-column="12" />
         </state>
       </provider>
     </entry>
